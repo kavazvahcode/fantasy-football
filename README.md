@@ -1,8 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fantasy Football SSG Application
 
-## Getting Started
+A modern, high-performance fantasy football player analysis tool built with Next.js 15, featuring Static Site Generation (SSG) for optimal performance and user experience.
 
-First, run the development server:
+## 🚀 Technology Stack
+
+- **Next.js 15.4.7** - Latest version with App Router and RSC
+- **React 19** - Latest React with concurrent features
+- **Tailwind CSS v4** - Modern utility-first CSS framework
+- **TypeScript 5** - Type-safe development
+- **Static Site Generation (SSG)** - Pre-rendered at build time for maximum performance
+
+## 📊 Features
+
+- **Player Analytics Dashboard** - Interactive table with player statistics
+- **Advanced Filtering** - Cascade filtering by operator, game type, and slate name
+- **Responsive Player Card** - Detailed player information display
+- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
+- **Pagination System** - Efficient data navigation with customizable rows per page
+- **Real-time Player Selection** - Synchronized table and card views
+
+## 🗂️ Data Source
+
+All player data is stored in the `data.json` file located in the project root. This file contains DFS (Daily Fantasy Sports) slate information including:
+
+- Player statistics and salaries
+- Operator information (DraftKings, FanDuel, etc.)
+- Game types and slate details
+- Fantasy points and projections
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+
+### Installation & Development
+
+1. **Clone the repository**
+
+```bash
+git clone <repository-url>
+cd fantasy-football
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. **Run the development server**
 
 ```bash
 npm run dev
@@ -10,27 +62,97 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Open in browser**
+   Visit [http://localhost:3000](http://localhost:3000) to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Build for production (SSG)
+npm run build
 
-## Learn More
+# Start production server
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🏗️ Architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Static Site Generation (SSG)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Build-time data processing** - All data from `data.json` is processed during build
+- **Pre-rendered pages** - Fully static HTML generation for maximum performance
+- **Client-side hydration** - Interactive features activated after page load
+- **Zero API calls** - All data included in the initial bundle
 
-## Deploy on Vercel
+### Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+fantasy-football/
+├── app/                    # Next.js App Router
+│   ├── page.tsx           # Main page (Server Component)
+│   ├── layout.tsx         # Root layout
+│   └── globals.css        # Global styles + Tailwind
+├── components/            # Reusable UI components
+│   ├── FilterPanel/       # Filter controls
+│   ├── FilteredPlayersInfo/ # Main content area
+│   ├── PlayerCard/        # Player detail card
+│   ├── Table/             # Data table with pagination
+│   ├── Select/            # Custom select component
+│   └── Pagination/        # Pagination controls
+├── providers/             # React Context providers
+│   └── FantasyDataProvider/ # Data management context
+├── lib/                   # Business logic
+│   └── data-processor.ts  # Build-time data processing
+├── types/                 # TypeScript type definitions
+│   ├── fantasy-football.ts # Core types
+│   └── index.ts           # Type exports
+└── data.json             # Source data file
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Design System
+
+The application uses a custom dark theme with CSS variables defined in `globals.css`:
+
+- **Color Palette** - Dark theme with accent colors
+- **Responsive Typography** - Mobile-first font scaling
+- **Component Consistency** - Reusable design tokens
+- **Accessibility** - WCAG compliant color contrasts
+
+## 📱 Responsive Features
+
+- **Mobile-first Design** - Optimized for small screens
+- **Adaptive Layouts** - Different layouts for desktop/mobile
+- **Touch-friendly** - Optimized for mobile interactions
+- **Performance** - Minimal bundle size and fast loading
+
+## 🔧 Performance Optimizations
+
+- **Static Generation** - Pre-rendered at build time
+- **Image Optimization** - Next.js automatic image optimization
+- **Bundle Splitting** - Automatic code splitting
+- **Caching** - Build-time data caching with singleton pattern
+- **Tree Shaking** - Unused code elimination
+
+## 🚢 Deployment
+
+### Vercel (Recommended)
+
+The easiest deployment option for Next.js applications:
+
+1. Push code to GitHub/GitLab/Bitbucket
+2. Connect repository to [Vercel](https://vercel.com)
+3. Automatic deployment on every push
+
+### Manual Deployment
+
+```bash
+npm run build
+```
+
+Deploy the `.next` output to any static hosting provider.
+
+## 📄 License
+
+This project is private and confidential.

@@ -1,26 +1,68 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Basic colors */
+  --background: #191919;
+  --foreground: #ffffff;
+
+  /* Shades of black and gray with descriptive names */
+  --pure-black: #050505;
+  --dark-charcoal: #1d1d1d; /* secondaryBackground */
+  --charcoal: #191919; /* background */
+  --slate-gray: #2f2f2f; /* primaryBackground */
+  --medium-gray: #303030; /* backgroundGreyLight */
+  --dark-gray: #262626; /* backgroundGreyDark */
+  --light-gray: #d5d5d5; /* secondary */
+  --white: #ffffff; /* primary */
+
+  /* Accent colors */
+  --olive-green: #807b0f;
+
+  /* Alternative names for easier usage */
+  --bg-primary: var(--charcoal);
+  --bg-secondary: var(--dark-charcoal);
+  --bg-elevated: var(--slate-gray);
+  --bg-subtle: var(--medium-gray);
+  --bg-dark: var(--dark-gray);
+  --text-primary: var(--white);
+  --text-secondary: var(--light-gray);
+  --accent-color: var(--olive-green);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-inter);
+
+  /* Custom colors for Tailwind utility classes */
+  --color-pure-black: #050505;
+  --color-dark-charcoal: #1d1d1d;
+  --color-charcoal: #191919;
+  --color-slate-gray: #2f2f2f;
+  --color-medium-gray: #303030;
+  --color-light-gray: #d5d5d5;
+  --color-olive-green: #807b0f;
+  --color-dark-gray: #262626;
+
+  /* Alternative color names */
+  --color-bg-primary: #191919;
+  --color-bg-secondary: #1d1d1d;
+  --color-bg-elevated: #2f2f2f;
+  --color-bg-subtle: #303030;
+  --color-bg-dark: #262626;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d5d5d5;
+  --color-accent: #807b0f;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-primary: #191919;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), sans-serif;
 }
