@@ -2,6 +2,12 @@
 
 A modern, high-performance fantasy football player analysis tool built with Next.js 15, featuring Static Site Generation (SSG) for optimal performance and user experience.
 
+## 🌐 Live Demo
+
+**[View Live Application →](https://fantasy-football-topaz.vercel.app/)**
+
+_The application is deployed on Vercel with automatic deployments from the main branch._
+
 ## 🚀 Technology Stack
 
 - **Next.js 15.4.7** - Latest version with App Router and RSC
@@ -137,6 +143,10 @@ The application uses a custom dark theme with CSS variables defined in `globals.
 
 ## 🚢 Deployment
 
+### Live Production Application
+
+**Current deployment**: [https://fantasy-football-topaz.vercel.app/](https://fantasy-football-topaz.vercel.app/)
+
 ### Vercel (Recommended)
 
 The easiest deployment option for Next.js applications:
@@ -144,6 +154,14 @@ The easiest deployment option for Next.js applications:
 1. Push code to GitHub/GitLab/Bitbucket
 2. Connect repository to [Vercel](https://vercel.com)
 3. Automatic deployment on every push
+
+**Benefits of Vercel deployment:**
+
+- **Zero Configuration** - Works out of the box with Next.js
+- **Global CDN** - Fast loading worldwide
+- **Automatic HTTPS** - SSL certificates included
+- **Preview Deployments** - Every PR gets a preview URL
+- **Analytics** - Built-in performance monitoring
 
 ### Manual Deployment
 
